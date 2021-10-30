@@ -2,7 +2,6 @@ D:\software\ThreeLayeredArchitecture\src\DemoAPI\DemoAPI.DAL\bin\Debug\net5.0\De
 D:\software\ThreeLayeredArchitecture\src\DemoAPI\DemoAPI.DAL\bin\Debug\net5.0\DemoAPI.DAL.dll
 D:\software\ThreeLayeredArchitecture\src\DemoAPI\DemoAPI.DAL\bin\Debug\net5.0\ref\DemoAPI.DAL.dll
 D:\software\ThreeLayeredArchitecture\src\DemoAPI\DemoAPI.DAL\bin\Debug\net5.0\DemoAPI.DAL.pdb
-D:\software\ThreeLayeredArchitecture\src\DemoAPI\DemoAPI.DAL\obj\Debug\net5.0\DemoAPI.DAL.csproj.AssemblyReference.cache
 D:\software\ThreeLayeredArchitecture\src\DemoAPI\DemoAPI.DAL\obj\Debug\net5.0\DemoAPI.DAL.GeneratedMSBuildEditorConfig.editorconfig
 D:\software\ThreeLayeredArchitecture\src\DemoAPI\DemoAPI.DAL\obj\Debug\net5.0\DemoAPI.DAL.AssemblyInfoInputs.cache
 D:\software\ThreeLayeredArchitecture\src\DemoAPI\DemoAPI.DAL\obj\Debug\net5.0\DemoAPI.DAL.AssemblyInfo.cs
@@ -10,3 +9,7 @@ D:\software\ThreeLayeredArchitecture\src\DemoAPI\DemoAPI.DAL\obj\Debug\net5.0\De
 D:\software\ThreeLayeredArchitecture\src\DemoAPI\DemoAPI.DAL\obj\Debug\net5.0\DemoAPI.DAL.dll
 D:\software\ThreeLayeredArchitecture\src\DemoAPI\DemoAPI.DAL\obj\Debug\net5.0\ref\DemoAPI.DAL.dll
 D:\software\ThreeLayeredArchitecture\src\DemoAPI\DemoAPI.DAL\obj\Debug\net5.0\DemoAPI.DAL.pdb
+D:\software\ThreeLayeredArchitecture\src\DemoAPI\DemoAPI.DAL\bin\Debug\net5.0\DemoAPI.DAL.runtimeconfig.json
+D:\software\ThreeLayeredArchitecture\src\DemoAPI\DemoAPI.DAL\bin\Debug\net5.0\DemoAPI.DAL.runtimeconfig.dev.json
+D:\software\ThreeLayeredArchitecture\src\DemoAPI\DemoAPI.DAL\obj\Debug\net5.0\DemoAPI.DAL.genruntimeconfig.cache
+D:\software\ThreeLayeredArchitecture\src\DemoAPI\DemoAPI.DAL\obj\Debug\net5.0\DemoAPI.DAL.csproj.AssemblyReference.cache

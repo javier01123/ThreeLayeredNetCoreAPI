@@ -1,0 +1,23 @@
+version: '3.4'
+
+services:
+  demoapi.web:
+    image: ${DOCKER_REGISTRY-}demoapiweb
+    build:
+      context: .
+      dockerfile: DemoAPI.Web/Dockerfile
+    depends_on:
+      - "postgres"
+
+  postgres:
+    ports:
+      - '5432:5432'
+    container_name: demoapi_postgres
+    environment:      
+      - POSTGRES_PASSWORD=myPassword
+    volumes:
+      - 'demoapi-postgres-volume:/var/lib/postgresql/data'
+    image: 'postgres:14.0' 
+
+volumes:
+  demoapi-postgres-volume:
