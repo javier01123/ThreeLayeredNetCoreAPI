@@ -20,4 +20,8 @@
     <ProjectReference Include="..\DemoAPI.BLL\DemoAPI.BLL.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Middleware\" />
+  </ItemGroup>
+
 </Project>

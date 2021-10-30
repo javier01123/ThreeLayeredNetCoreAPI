@@ -1,8 +1,10 @@
 ﻿using DemoAPI.DAL;
+using MediatR;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using System;
+using System.Reflection;
 
 namespace DemoAPI.BLL
 {
@@ -13,6 +15,8 @@ namespace DemoAPI.BLL
             services.AddDbContext<DemoAPIContext>(options =>
                     options.UseNpgsql(configuration.GetConnectionString("DefaultConnection"))
                     );
+
+            services.AddMediatR(Assembly.GetExecutingAssembly());
         }
     }
 }

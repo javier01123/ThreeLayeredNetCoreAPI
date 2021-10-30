@@ -33,12 +33,12 @@ namespace DemoAPI.Web
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "DemoAPI.Web", Version = "v1" });
             });
 
-            services.AddApiVersioning(options =>
-            {
-                options.AssumeDefaultVersionWhenUnspecified = true;
-                options.DefaultApiVersion = new ApiVersion(1, 0);
-                options.ReportApiVersions = true;
-            });
+            //services.AddApiVersioning(options =>
+            //{
+            //    options.AssumeDefaultVersionWhenUnspecified = true;
+            //    options.DefaultApiVersion = new ApiVersion(1, 0);
+            //    options.ReportApiVersions = true;
+            //});
 
             services.AddBLLDependencies(Configuration);
             //services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
