@@ -31,6 +31,13 @@ namespace DemoAPI.Web
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "DemoAPI.Web", Version = "v1" });
             });
+
+            services.AddApiVersioning(options =>
+            {
+                options.AssumeDefaultVersionWhenUnspecified = true;
+                options.DefaultApiVersion = new ApiVersion(1, 0);
+                options.ReportApiVersions = true;
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
