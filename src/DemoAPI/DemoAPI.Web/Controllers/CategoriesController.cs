@@ -19,7 +19,7 @@ namespace DemoAPI.Web.Controllers
 
         [HttpPost]
         public async Task<IActionResult> CreateCategory([FromBody] CreateCategoryCmd cmd)
-        {
+        {           
             await _mediator.Send(cmd);
             return Ok();
         }

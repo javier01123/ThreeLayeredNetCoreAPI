@@ -10,8 +10,8 @@ Demo API for a three layered architecture
 
 
 # To do
-- implement fluent validator
-- implement exception loging
+- implement exception logging
 - documentation for swagger
 - document achitecture
 - implement jwt
+- implement optimistic concurrency handling

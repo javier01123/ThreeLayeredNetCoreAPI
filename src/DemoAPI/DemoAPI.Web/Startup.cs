@@ -1,4 +1,5 @@
 using DemoAPI.BLL;
+using DemoAPI.Web.Middleware;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -40,8 +41,9 @@ namespace DemoAPI.Web
             //    options.ReportApiVersions = true;
             //});
 
-            services.AddBLLDependencies(Configuration);
+            services.AddBLLDependencies(Configuration);           
             //services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -54,14 +56,15 @@ namespace DemoAPI.Web
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "DemoAPI.Web v1"));
             }
 
+            app.UseCustomExceptionHandler();
             app.UseRouting();
-
             app.UseAuthorization();
-
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
             });
+
+            
         }
     }
 }

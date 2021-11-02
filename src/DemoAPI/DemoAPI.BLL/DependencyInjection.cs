@@ -1,4 +1,6 @@
-﻿using DemoAPI.DAL;
+﻿using DemoAPI.BLL.Pipeline;
+using DemoAPI.DAL;
+using FluentValidation;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -17,6 +19,8 @@ namespace DemoAPI.BLL
                     );
 
             services.AddMediatR(Assembly.GetExecutingAssembly());
-        }
+            services.AddValidatorsFromAssembly(Assembly.GetExecutingAssembly());
+            services.AddTransient(typeof(IPipelineBehavior<,>), typeof(RequestValidationBehavior<,>));
+        }         
     }
 }
