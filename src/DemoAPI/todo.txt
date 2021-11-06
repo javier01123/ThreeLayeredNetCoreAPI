@@ -1,0 +1,1 @@
+add guid to exception and pass to client

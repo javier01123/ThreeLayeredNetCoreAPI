@@ -54,6 +54,7 @@ namespace DemoAPI.Web.Middleware
                     //ThreadPool.QueueUserWorkItem<IMediator>(mediator =>
                     //{ }, mediator, false);
                       mediator.Send(LogExceptionCmd.FromException(ex)).Wait();                   
+
                     break;
             }
 

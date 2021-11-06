@@ -20,3 +20,4 @@ Demo API for a three layered architecture
 - implement jwt
 - demo queue background work
 - end-to-end tests
+- EF query filters for soft-delete

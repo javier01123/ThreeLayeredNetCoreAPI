@@ -30,7 +30,7 @@ namespace DemoAPI.DAL.EntityConfig
                    .HasColumnName("password")
                    .HasMaxLength(200);
 
-            builder.HasIndex(m => m.Username);
+            builder.HasIndex(m => m.Username).IsUnique();
         }
     }
 }
