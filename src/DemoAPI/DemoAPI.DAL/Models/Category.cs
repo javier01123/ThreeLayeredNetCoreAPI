@@ -14,7 +14,7 @@ namespace DemoAPI.DAL.Models
 
         public static Category FromName(string name)
         {
-            return new Category() {  Name = name}
+            return new Category() { Name = name };
         }
     }
 }
