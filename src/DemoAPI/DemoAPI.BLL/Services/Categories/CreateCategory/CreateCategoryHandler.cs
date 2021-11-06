@@ -21,11 +21,7 @@ namespace DemoAPI.BLL.Services.Categories.CreateCategory
 
         public async Task<Unit> Handle(CreateCategoryCmd request, CancellationToken cancellationToken)
         {
-            var newCategory = new Category()
-            {
-                Name = request.Name
-            };
-
+            var newCategory = Category.FromName(request.Name);          
             _ctx.Add(newCategory);
             await _ctx.SaveChangesAsync();
             return Unit.Value;
