@@ -27,7 +27,7 @@ namespace DemoAPI.Web.Controllers
         [HttpGet]
         public async Task<IActionResult> GetCategories()
         {
-            var res = await _mediator.Send(new GetCategoriesCmd());
+            var res = await _mediator.Send(new GetCategoriesQuery());
             return Ok(res);
         }
     }

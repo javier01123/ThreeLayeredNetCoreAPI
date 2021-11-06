@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace DemoAPI.BLL.Services.Categories.GetCategories
 {
-    public class GetCategoriesHandler : IRequestHandler<GetCategoriesCmd, IEnumerable<CategoriySelectDto>>
+    public class GetCategoriesHandler : IRequestHandler<GetCategoriesQuery, IEnumerable<CategoriySelectDto>>
     {
         DemoAPIContext _ctx;
 
@@ -19,8 +19,8 @@ namespace DemoAPI.BLL.Services.Categories.GetCategories
             _ctx = ctx;
         }
 
-        public async Task<IEnumerable<CategoriySelectDto>> Handle(GetCategoriesCmd request, CancellationToken cancellationToken)
-        {
+        public async Task<IEnumerable<CategoriySelectDto>> Handle(GetCategoriesQuery request, CancellationToken cancellationToken)
+        {            
             var res = await _ctx.Categories.Select(c => new CategoriySelectDto()
             {
                 CategoryId = c.CategoryId,

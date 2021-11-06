@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace DemoAPI.BLL.Services.Categories.GetCategories
 {
-    public class GetCategoriesCmd:IRequest<IEnumerable<CategoriySelectDto>>
+    public class GetCategoriesQuery:IRequest<IEnumerable<CategoriySelectDto>>
     {
     }
 }

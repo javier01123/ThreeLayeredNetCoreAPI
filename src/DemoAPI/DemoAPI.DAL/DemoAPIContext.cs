@@ -10,10 +10,8 @@ namespace DemoAPI.DAL
 {
     public class DemoAPIContext:DbContext
     {
-
         public DemoAPIContext(DbContextOptions options) : base(options)
         {
-
         }
         public DbSet<Category> Categories { get; set; }
 
