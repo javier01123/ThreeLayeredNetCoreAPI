@@ -10,9 +10,12 @@ Demo API for a three layered architecture
 - Docker compose
 
 
+# Done
+- implement fluent validation middleware
+- implement exception logging
+- many to many relationship without intermediate entity
+  
 # To do
-- ~~implement fluent validation middleware~~
-- ~~implement exception logging~~
 - enums in entity framework as strings in database
 - implement optimistic concurrency handling
 - documentation for swagger
