@@ -17,11 +17,11 @@ Demo API for a three layered architecture
 - enums in entity framework as strings in database
   
 # To do
-
+- end-to-end tests (https://docs.microsoft.com/en-us/aspnet/core/test/integration-tests?view=aspnetcore-5.0)
+- upgrade to NET 6
 - implement optimistic concurrency handling
 - documentation for swagger
 - document achitecture
 - implement jwt
 - demo queue background work
-- end-to-end tests
 - EF query filters for soft-delete

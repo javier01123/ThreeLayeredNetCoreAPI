@@ -43,9 +43,8 @@ namespace DemoAPI.Web.Middleware
                     code = HttpStatusCode.BadRequest;
                     result = JsonConvert.SerializeObject(bre.DetailedResponse);
                     break;
-                default:
-                    //ThreadPool.QueueUserWorkItem<IMediator>(mediator =>
-                    //{ }, mediator, false);
+                default:            
+                    //todo: look for better external logging solutions
                     mediator.Send(LogExceptionCmd.FromException(ex)).Wait();
                     break;
             }
