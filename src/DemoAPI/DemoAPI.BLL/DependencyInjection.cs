@@ -14,7 +14,7 @@ namespace DemoAPI.BLL
         public static void AddBLLDependencies(this IServiceCollection services, IConfiguration configuration)
         {
             services.AddDbContext<DemoAPIContext>(options =>
-                    options.UseNpgsql(configuration.GetConnectionString("DefaultConnection"))
+                        options.UseNpgsql(configuration.GetConnectionString("DefaultConnection"))
                     );
 
             services.AddMediatR(Assembly.GetExecutingAssembly());

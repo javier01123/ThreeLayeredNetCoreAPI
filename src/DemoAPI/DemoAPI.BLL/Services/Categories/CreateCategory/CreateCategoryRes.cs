@@ -8,12 +8,12 @@ namespace DemoAPI.BLL.Services.Categories.CreateCategory
 {
     public class CreateCategoryRes
     {
-        public CreateCategoryRes(int id, string name)
+        public CreateCategoryRes(int categoryId, string name)
         {
-            Id = id;
+            CategoryId = categoryId;
             Name = name;
         }
-        public int Id { get; private set; }
+        public int CategoryId { get; private set; }
         public string Name { get; private set; }
     }
 }

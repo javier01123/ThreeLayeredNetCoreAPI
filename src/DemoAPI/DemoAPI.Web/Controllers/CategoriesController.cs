@@ -1,5 +1,6 @@
 ﻿using DemoAPI.BLL.Services.Categories.CreateCategory;
 using DemoAPI.BLL.Services.Categories.GetCategories;
+using DemoAPI.BLL.Services.Categories.UpdateCategory;
 using DemoAPI.Web.Common;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
@@ -13,16 +14,24 @@ namespace DemoAPI.Web.Controllers
         {
         }
 
-        [HttpPost]
-        public async Task<IActionResult> CreateCategory([FromBody] CreateCategoryCmd cmd)
-        {            
-            return Ok(await _mediator.Send(cmd));
-        }
+       
 
         [HttpGet]
         public async Task<IActionResult> GetCategories()
         {     
             return Ok(await _mediator.Send(new GetCategoriesQuery()));
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> CreateCategory([FromBody] CreateCategoryCmd cmd)
+        {
+            return Ok(await _mediator.Send(cmd));
+        }
+
+        [HttpPut]
+        public async Task<IActionResult> UpdateCategory([FromBody] UpdateCategoryCmd cmd)
+        {
+            return Ok(await _mediator.Send(cmd));
         }
     }
 }

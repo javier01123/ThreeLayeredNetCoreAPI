@@ -8,11 +8,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DemoAPI.Tests.EndToEnd.Controllers
+namespace DemoAPI.Tests.EndToEnd.Controllers.Categories
 {
     [TestFixture]
-    public class CategoryTests:ControllerTestBase
+    public class CreateTests : ControllerTestBase
     {
+        private const string ENDPOINT = "/api/categories/";
+
         [Test]
         public async Task test_create_valid_category()
         {
@@ -20,14 +22,14 @@ namespace DemoAPI.Tests.EndToEnd.Controllers
             {
                 Name = "medical instruments"
             };
-
-            var content = Utilities.GetContentFromCmd(cmd);
-            var response = await _httpClient.PostAsync($"/api/categories/", content);
+         
+            var response = await _httpClient.PostAsync(ENDPOINT, GetContentFromCmd(cmd));
             response.EnsureSuccessStatusCode();
 
             var category = await response.Deserialize<CreateCategoryRes>();
-            Assert.Greater(category.Id, 0);
+            Assert.Greater(category.CategoryId, 0);
             Assert.IsNotEmpty(category.Name);
-        }        
+        }
+
     }
 }

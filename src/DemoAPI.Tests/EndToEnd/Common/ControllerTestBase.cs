@@ -1,5 +1,6 @@
 ﻿using API.IntegrationTests.Common;
 using DemoAPI.Web;
+using Newtonsoft.Json;
 using NUnit.Framework;
 using System;
 using System.Collections.Generic;
@@ -9,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace DemoAPI.EndToEnd.Common
 {
-    public class ControllerTestBase
+    public abstract class ControllerTestBase
     {
         protected CustomWebApplicationFactory<Startup> _factory;
         protected HttpClient _httpClient;
@@ -21,6 +22,18 @@ namespace DemoAPI.EndToEnd.Common
             _httpClient = _factory.GetAnonymousClient();
         }
 
-      //todo: check test concurrency and tear down changes
+        //todo: check test concurrency and tear down changes
+        [TearDown]
+        public virtual void TearDown()
+        {
+
+        }
+
+
+        public StringContent GetContentFromCmd(object obj)
+        {
+            return new StringContent(JsonConvert.SerializeObject(obj), Encoding.UTF8, "application/json");
+        }
+  
     }
 }

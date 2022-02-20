@@ -11,10 +11,10 @@ namespace DemoAPI.BLL.Services.Users.RegisterUser
 
         public RegisterUserRes(int id, string username)
         {
-            Id = id;
+            UserId = id;
             Username = username;
         }
-        public int Id { get; set; }
+        public int UserId { get; set; }
         public string Username { get; set; }
     }
 }

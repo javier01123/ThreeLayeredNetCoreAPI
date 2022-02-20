@@ -12,8 +12,8 @@ namespace DemoAPI.BLL.Services.Categories.CreateCategory
     {
         public CreateCategoryValidator()
         {
-            RuleFor(c => c.Name).NotEmpty();
-            RuleFor(c => c.Name).MaximumLength(20);
+            RuleFor(c => c.Name).NotEmpty()
+                                .MaximumLength(20);
         }
     }
 }

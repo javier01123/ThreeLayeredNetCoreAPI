@@ -19,7 +19,6 @@ namespace API.IntegrationTests.Common
 {
     public class CustomWebApplicationFactory<TStartup> : WebApplicationFactory<TStartup> where TStartup : class
     {
-
         public CustomWebApplicationFactory()
         {
         }
@@ -51,7 +50,16 @@ namespace API.IntegrationTests.Common
 
                     context.Database.EnsureDeleted();
                     context.Database.EnsureCreated();
-                   
+
+                    try
+                    {
+                        SeedDatabase.InitializeDbForTests(context);
+                    }
+                    catch (Exception ex)
+                    {
+                        logger.LogError(ex, $"error al inicializar la base de datos. Error: {ex.Message}");
+                    }
+
                 })
                 .UseEnvironment("Test");
                 //.UseSetting("https_port", "44362");

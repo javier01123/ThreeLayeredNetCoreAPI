@@ -13,10 +13,11 @@ namespace DemoAPI.BLL.Services.Users.RegisterUser
     {
         public RegisterUserValidator()
         {
-            RuleFor(m => m.Username).NotEmpty();
-            RuleFor(m => m.Username).MaximumLength(20);
-            RuleFor(m => m.Password).NotEmpty();
-            RuleFor(m => m.Password).MaximumLength(30);
+            RuleFor(m => m.Username).NotEmpty()
+                                    .MaximumLength(20);
+
+            RuleFor(m => m.Password).NotEmpty()
+                                    .MaximumLength(30);
         }
     }
 }
