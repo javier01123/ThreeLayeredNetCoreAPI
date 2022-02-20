@@ -1,11 +1,6 @@
 ﻿using DemoAPI.DAL.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DemoAPI.DAL.EntityConfig
 {
@@ -22,7 +17,7 @@ namespace DemoAPI.DAL.EntityConfig
                     .HasColumnName("error_date")
                     .HasColumnType("timestamp");
 
-            builder.Property(m => m.Message)                    
+            builder.Property(m => m.Message)
                     .HasColumnName("message");
 
             builder.Property(m => m.InnerException)

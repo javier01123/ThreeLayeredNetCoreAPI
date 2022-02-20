@@ -1,18 +1,11 @@
 ﻿using DemoAPI.BLL.Common.Exceptions;
 using DemoAPI.BLL.Services.Logging.LogException;
-using FluentValidation;
 using MediatR;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Http;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Hosting.Internal;
 using Newtonsoft.Json;
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Net;
-using System.Threading;
 using System.Threading.Tasks;
 
 namespace DemoAPI.Web.Middleware
@@ -48,13 +41,12 @@ namespace DemoAPI.Web.Middleware
             {
                 case BadRequestEx bre:
                     code = HttpStatusCode.BadRequest;
-                    result = JsonConvert.SerializeObject(bre.Response);
+                    result = JsonConvert.SerializeObject(bre.DetailedResponse);
                     break;
                 default:
                     //ThreadPool.QueueUserWorkItem<IMediator>(mediator =>
                     //{ }, mediator, false);
-                      mediator.Send(LogExceptionCmd.FromException(ex)).Wait();                   
-
+                    mediator.Send(LogExceptionCmd.FromException(ex)).Wait();
                     break;
             }
 
@@ -62,7 +54,7 @@ namespace DemoAPI.Web.Middleware
             context.Response.StatusCode = (int)code;
 
             if (result == string.Empty)
-                result = JsonConvert.SerializeObject(new { error = ex.Message });
+                result = JsonConvert.SerializeObject(new { error = "An error occured on the server" });
 
             return context.Response.WriteAsync(result);
         }

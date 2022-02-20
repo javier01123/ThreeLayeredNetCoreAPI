@@ -1,14 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.ComponentModel;
 
 namespace DemoAPI.DAL.Enums
 {
     public enum UserType
     {
-        SuperUser = 1,
-        Regular= 2
+        [Description("ADMIN")]
+        Admin = 1,
+
+        [Description("REGULAR")]
+        Normal = 2
     }
 }

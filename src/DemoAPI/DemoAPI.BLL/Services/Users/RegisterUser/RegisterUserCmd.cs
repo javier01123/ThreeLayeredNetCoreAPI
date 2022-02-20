@@ -1,14 +1,9 @@
 ﻿using FluentValidation;
 using MediatR;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace DemoAPI.BLL.Services.Users
+namespace DemoAPI.BLL.Services.Users.RegisterUser
 {
-    public class RegisterUserCmd:IRequest
+    public class RegisterUserCmd : IRequest<RegisterUserRes>
     {
         public string Username { get; set; }
         public string Password { get; set; }

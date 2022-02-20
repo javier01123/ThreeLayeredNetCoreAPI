@@ -1,10 +1,8 @@
 ﻿using DemoAPI.DAL;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -20,14 +18,13 @@ namespace DemoAPI.BLL.Services.Categories.GetCategories
         }
 
         public async Task<IEnumerable<CategoriySelectDto>> Handle(GetCategoriesQuery request, CancellationToken cancellationToken)
-        {            
-            var res = await _ctx.Categories.Select(c => new CategoriySelectDto()
-            {
-                CategoryId = c.CategoryId,
-                Name = c.Name
-            }).ToListAsync();
-
-            return res;
+        {
+            return await _ctx.Categories.Select(c =>
+                                            new CategoriySelectDto()
+                                            {
+                                                CategoryId = c.CategoryId,
+                                                Name = c.Name
+                                            }).ToListAsync();
         }
     }
 }

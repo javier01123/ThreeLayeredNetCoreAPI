@@ -1,17 +1,22 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DemoAPI.BLL.Common.Exceptions
 {
-    public class BadRequestEx:Exception
+    public class BadRequestEx : Exception
     {
-        public ValidationResponse Response { get; private set; }
-        public BadRequestEx(ValidationResponse res)
+        public DetailedResponse DetailedResponse { get; private set; }
+
+
+        private BadRequestEx() { }
+
+        public BadRequestEx(string message)
         {
-            Response = res;
+            this.DetailedResponse = DetailedResponse.FromSingleError(message);
+        }
+
+        public BadRequestEx(DetailedResponse res)
+        {
+            DetailedResponse = res;
         }
     }
 }

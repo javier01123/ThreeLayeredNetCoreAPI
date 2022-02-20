@@ -1,10 +1,6 @@
 ﻿using DemoAPI.DAL;
 using DemoAPI.DAL.Models;
 using MediatR;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -21,7 +17,7 @@ namespace DemoAPI.BLL.Services.Categories.CreateCategory
 
         public async Task<Unit> Handle(CreateCategoryCmd request, CancellationToken cancellationToken)
         {
-            var newCategory = Category.FromName(request.Name);          
+            var newCategory = Category.FromName(request.Name);
             _ctx.Add(newCategory);
             await _ctx.SaveChangesAsync();
             return Unit.Value;
