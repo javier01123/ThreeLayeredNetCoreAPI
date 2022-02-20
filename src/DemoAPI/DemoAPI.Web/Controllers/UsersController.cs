@@ -14,9 +14,8 @@ namespace DemoAPI.Web.Controllers
 
         [HttpPost]
         public async Task<IActionResult> RegisterUser([FromBody] RegisterUserCmd cmd)
-        {
-            await _mediator.Send(cmd);
-            return Ok();
+        {    
+            return Ok(await _mediator.Send(cmd));
         }
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DemoAPI.BLL.Services.Categories.CreateCategory
 {
-    public class CreateCategoryHandler : IRequestHandler<CreateCategoryCmd>
+    public class CreateCategoryHandler : IRequestHandler<CreateCategoryCmd, CreateCategoryRes>
     {
         DemoAPIContext _ctx;
 
@@ -15,12 +15,12 @@ namespace DemoAPI.BLL.Services.Categories.CreateCategory
             _ctx = ctx;
         }
 
-        public async Task<Unit> Handle(CreateCategoryCmd request, CancellationToken cancellationToken)
+        public async Task<CreateCategoryRes> Handle(CreateCategoryCmd request, CancellationToken cancellationToken)
         {
             var newCategory = Category.FromName(request.Name);
             _ctx.Add(newCategory);
             await _ctx.SaveChangesAsync();
-            return Unit.Value;
+            return new CreateCategoryRes(newCategory.CategoryId, newCategory.Name);
         }
     }
 }

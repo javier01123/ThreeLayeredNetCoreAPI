@@ -10,7 +10,7 @@ namespace DemoAPI.Tests.EndToEnd.Common
 {
     public class Utilities
     {
-        public static StringContent GetRequestContent(object obj)
+        public static StringContent GetContentFromCmd(object obj)
         {
             return new StringContent(JsonConvert.SerializeObject(obj), Encoding.UTF8, "application/json");
         }

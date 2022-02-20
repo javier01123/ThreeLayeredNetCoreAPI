@@ -3,7 +3,7 @@ using MediatR;
 
 namespace DemoAPI.BLL.Services.Categories.CreateCategory
 {
-    public class CreateCategoryCmd : IRequest
+    public class CreateCategoryCmd : IRequest<CreateCategoryRes>
     {
         public string Name { get; set; }
     }

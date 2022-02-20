@@ -18,12 +18,16 @@ namespace DemoAPI.Tests.EndToEnd.Controllers
         {
             var cmd = new CreateCategoryCmd()
             {
-                Name = "medial instruments"
+                Name = "medical instruments"
             };
 
-            var content = Utilities.GetRequestContent(cmd);
+            var content = Utilities.GetContentFromCmd(cmd);
             var response = await _httpClient.PostAsync($"/api/categories/", content);
             response.EnsureSuccessStatusCode();
+
+            var category = await response.Deserialize<CreateCategoryRes>();
+            Assert.Greater(category.Id, 0);
+            Assert.IsNotEmpty(category.Name);
         }        
     }
 }

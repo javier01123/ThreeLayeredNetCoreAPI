@@ -15,16 +15,14 @@ namespace DemoAPI.Web.Controllers
 
         [HttpPost]
         public async Task<IActionResult> CreateCategory([FromBody] CreateCategoryCmd cmd)
-        {
-            await _mediator.Send(cmd);
-            return Ok();
+        {            
+            return Ok(await _mediator.Send(cmd));
         }
 
         [HttpGet]
         public async Task<IActionResult> GetCategories()
-        {
-            var res = await _mediator.Send(new GetCategoriesQuery());
-            return Ok(res);
+        {     
+            return Ok(await _mediator.Send(new GetCategoriesQuery()));
         }
     }
 }

@@ -45,7 +45,7 @@ namespace DemoAPI.Web.Middleware
                     break;
                 default:            
                     //todo: look for better external logging solutions
-                    mediator.Send(LogExceptionCmd.FromException(ex)).Wait();
+                    mediator.Send(LogExceptionCmd.FromException(ex)).Wait();                        
                     break;
             }
 
