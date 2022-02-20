@@ -15,9 +15,10 @@ Demo API for a three layered architecture
 - implement exception logging
 - many to many relationship without intermediate entity
 - enums in entity framework as strings in database
+- end-to-end tests (https://docs.microsoft.com/en-us/aspnet/core/test/integration-tests?view=aspnetcore-5.0)
   
 # To do
-- end-to-end tests (https://docs.microsoft.com/en-us/aspnet/core/test/integration-tests?view=aspnetcore-5.0)
+- implement end-to-end test tear down
 - upgrade to NET 6
 - implement optimistic concurrency handling
 - documentation for swagger
