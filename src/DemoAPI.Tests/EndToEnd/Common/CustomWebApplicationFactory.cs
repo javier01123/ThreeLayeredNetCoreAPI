@@ -53,7 +53,8 @@ namespace API.IntegrationTests.Common
 
                     try
                     {
-                        SeedDatabase.InitializeDbForTests(context);
+                          SeedDatabase.InitializeDbForTests(context).Wait();
+                        
                     }
                     catch (Exception ex)
                     {
