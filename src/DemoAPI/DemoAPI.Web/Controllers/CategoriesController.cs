@@ -29,8 +29,10 @@ namespace DemoAPI.Web.Controllers
         }
 
         [HttpPut]
-        public async Task<IActionResult> UpdateCategory([FromBody] UpdateCategoryCmd cmd)
+        [Route("{categoryId}")]
+        public async Task<IActionResult> UpdateCategory([FromRoute]int categoryId ,[FromBody] UpdateCategoryCmd cmd)
         {
+            cmd.CategoryId = categoryId;
             return Ok(await _mediator.Send(cmd));
         }
     }
