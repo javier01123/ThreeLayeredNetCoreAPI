@@ -34,6 +34,8 @@ namespace DemoAPI.DAL.EntityConfig
                     j => j.ToTable("product_category")
                     );
 
+            builder.UseXminAsConcurrencyToken();
+
         }
 
 

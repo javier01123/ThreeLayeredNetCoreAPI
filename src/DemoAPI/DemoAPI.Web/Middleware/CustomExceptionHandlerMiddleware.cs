@@ -3,6 +3,7 @@ using DemoAPI.BLL.Services.Logging.LogException;
 using MediatR;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Http;
+using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json;
 using System;
 using System.Net;
@@ -42,6 +43,14 @@ namespace DemoAPI.Web.Middleware
                 case BadRequestEx bre:
                     code = HttpStatusCode.BadRequest;
                     result = JsonConvert.SerializeObject(bre.DetailedResponse);
+                    break;
+                case NotFoundEx nfe:
+                    code = HttpStatusCode.NotFound;
+                    result = JsonConvert.SerializeObject(new { mesage = "resource not found." });
+                    break;
+                case DbUpdateConcurrencyException:
+                    code = HttpStatusCode.Conflict;
+                    result = JsonConvert.SerializeObject(new { mesage = "the resource was modified before completing the request, please try again." });
                     break;
                 default:            
                     //todo: look for better external logging solutions
